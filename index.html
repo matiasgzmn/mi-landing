@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundWave - Agencia de Grupos de Música</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #0a0e27;
+        }
+
+        /* Header y Navbar */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .btn-primary {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Main Content Area */
+        .wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        main {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        section {
+            padding: 3rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Sección 1: Nuestros Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sección 2: Testimonios */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .testimonial:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 1rem;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sección 3: Contacto */
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            background-color: #667eea;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Aside - Sidebar */
+        .aside-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .aside-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .registration-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .registration-form input {
+            padding: 0.8rem;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .registration-form input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        .btn-register {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .featured-bands {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .band-item {
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+            transition: transform 0.3s ease;
+        }
+
+        .band-item:hover {
+            transform: translateX(5px);
+        }
+
+        .band-item h4 {
+            color: #667eea;
+            margin-bottom: 0.3rem;
+        }
+
+        .band-genre {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1f3a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 2rem;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">🎵 SoundWave</a>
+                <ul class="nav-links">
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <button class="cta-button" onclick="document.querySelector('aside').scrollIntoView({behavior: 'smooth'})">Registrarse</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Conecta con los Mejores Grupos de Música</h1>
+            <p>La plataforma número 1 para descubrir, contratar y disfrutar de bandas en vivo</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.querySelector('aside').scrollIntoView({behavior: 'smooth'})">Únete Ahora</button>
+                <button class="btn-secondary">Ver Bandas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content + Aside -->
+    <div class="container">
+        <div class="wrapper">
+            <!-- MAIN: 3 Secciones -->
+            <main>
+                <!-- Sección 1: Nuestros Servicios -->
+                <section id="servicios">
+                    <h2>🎸 Nuestros Servicios</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🎤</div>
+                            <h3>Descubrimiento</h3>
+                            <p>Explora cientos de bandas y artistas talentosos en un solo lugar</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">📅</div>
+                            <h3>Reservas</h3>
+                            <p>Contrata tus bandas favoritas de forma rápida y segura</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🎭</div>
+                            <h3>Eventos</h3>
+                            <p>Organiza eventos inolvidables con artistas profesionales</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">⭐</div>
+                            <h3>Recomendaciones</h3>
+                            <p>Obtén sugerencias personalizadas según tus gustos musicales</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 2: Testimonios -->
+                <section id="testimonios">
+                    <h2>⭐ Lo que Dicen Nuestros Clientes</h2>
+                    <div class="testimonials-grid">
+                        <div class="testimonial">
+                            <div class="stars">★★★★★</div>
+                            <p>"SoundWave cambió la forma en que contrato músicos para mis eventos. ¡Excelente plataforma!"</p>
+                            <div class="testimonial-author">- Carlos Mendoza</div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="stars">★★★★★</div>
+                            <p>"Encontré a la banda perfecta para mi matrimonio. Fueron increíbles y todos lo disfrutaron."</p>
+                            <div class="testimonial-author">- María García</div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="stars">★★★★★</div>
+                            <p>"Como músico, SoundWave me ha permitido expandir mi negocio y conectar con más clientes."</p>
+                            <div class="testimonial-author">- Juan Rodriguez</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 3: Contacto -->
+                <section id="contacto">
+                    <h2>📧 Contacto</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" placeholder="¿En qué podemos ayudarte?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" placeholder="Tu mensaje aquí..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+                </section>
+            </main>
+
+            <!-- ASIDE: Sidebar con 3 secciones -->
+            <aside>
+                <!-- Aside 1: Registro -->
+                <div class="aside-card">
+                    <h3>🌟 Regístrate Ahora</h3>
+                    <form class="registration-form">
+                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Contraseña" required>
+                        <input type="tel" placeholder="Teléfono" required>
+                        <button type="submit" class="btn-register">Crear Cuenta</button>
+                    </form>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 1rem; text-align: center;">Ya tienes cuenta? <a href="#" style="color: #667eea; text-decoration: none;">Inicia sesión</a></p>
+                </div>
+
+                <!-- Aside 2: Estadísticas -->
+                <div class="aside-card">
+                    <h3>📊 Nuestras Cifras</h3>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Bandas Activas</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Usuarios Registrados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">2K+</div>
+                            <div class="stat-label">Eventos Realizados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.9★</div>
+                            <div class="stat-label">Calificación</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aside 3: Bandas Destacadas -->
+                <div class="aside-card">
+                    <h3>🎼 Bandas Destacadas</h3>
+                    <div class="featured-bands">
+                        <div class="band-item">
+                            <h4>Los Maestros del Ritmo</h4>
+                            <div class="band-genre">Reggaeton • 4.8★</div>
+                        </div>
+                        <div class="band-item">
+                            <h4>Electric Harmony</h4>
+                            <div class="band-genre">Rock • 4.9★</div>
+                        </div>
+                        <div class="band-item">
+                            <h4>Tropical Vibes</h4>
+                            <div class="band-genre">Salsa • 4.7★</div>
+                        </div>
+                        <div class="band-item">
+                            <h4>Jazz Boulevard</h4>
+                            <div class="band-genre">Jazz • 4.8★</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SoundWave - Agencia de Grupos de Música. Todos los derechos reservados.</p>
+        <p>Conectando artistas y audiencias en todo el mundo 🌍</p>
+    </footer>
+</body>
+</html>
