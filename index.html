@@ -6,188 +6,109 @@
     <title>SoundWave - Agencia de Grupos de Música</title>
 </head>
 <body>
-    <!-- Header -->
-    <header style="background-color: #667eea; padding: 20px; text-align: center;">
-        <h1 style="color: white; margin: 0;">🎵 SoundWave</h1>
-        <p style="color: white; margin: 10px 0 0 0;">Conecta con los Mejores Grupos de Música</p>
+    <header>
+        <h1>SoundWave</h1>
+        <p>Agencia de Grupos de Música</p>
     </header>
 
-    <!-- Navegación -->
-    <nav style="background-color: #764ba2; padding: 15px; text-align: center;">
-        <a href="#servicios" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Servicios</a>
-        <a href="#testimonios" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Testimonios</a>
-        <a href="#contacto" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Contacto</a>
-        <a href="#registro" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Registrarse</a>
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#registro">Registrarse</a>
     </nav>
 
-    <!-- Contenedor Principal -->
-    <div style="display: flex; max-width: 1200px; margin: 0 auto; padding: 20px; gap: 20px;">
-        
-        <!-- MAIN - Contenido Principal -->
-        <main style="flex: 2; background-color: #f9f9f9;">
-            
-            <!-- SECCIÓN 1: Nuestros Servicios -->
-            <section id="servicios" style="padding: 30px; border-bottom: 1px solid #ddd;">
-                <h2 style="color: #667eea;">🎸 Nuestros Servicios</h2>
-                
-                <table border="1" cellpadding="15" cellspacing="0" style="width: 100%; border-collapse: collapse;">
-                    <tr>
-                        <td style="text-align: center; background-color: #e8e8ff;">
-                            <h3>🎤 Descubrimiento</h3>
-                            <p>Explora cientos de bandas y artistas talentosos en un solo lugar</p>
-                        </td>
-                        <td style="text-align: center; background-color: #e8e8ff;">
-                            <h3>📅 Reservas</h3>
-                            <p>Contrata tus bandas favoritas de forma rápida y segura</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; background-color: #f0f0ff;">
-                            <h3>🎭 Eventos</h3>
-                            <p>Organiza eventos inolvidables con artistas profesionales</p>
-                        </td>
-                        <td style="text-align: center; background-color: #f0f0ff;">
-                            <h3>⭐ Recomendaciones</h3>
-                            <p>Obtén sugerencias personalizadas según tus gustos musicales</p>
-                        </td>
-                    </tr>
-                </table>
-            </section>
+    <main>
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <h3>Descubrimiento</h3>
+            <p>Explora cientos de bandas y artistas talentosos</p>
+            <h3>Reservas</h3>
+            <p>Contrata tus bandas favoritas de forma rápida y segura</p>
+            <h3>Eventos</h3>
+            <p>Organiza eventos inolvidables con artistas profesionales</p>
+            <h3>Recomendaciones</h3>
+            <p>Obtén sugerencias personalizadas según tus gustos musicales</p>
+        </section>
 
-            <!-- SECCIÓN 2: Testimonios -->
-            <section id="testimonios" style="padding: 30px; border-bottom: 1px solid #ddd;">
-                <h2 style="color: #667eea;">⭐ Lo que Dicen Nuestros Clientes</h2>
-                
-                <table border="1" cellpadding="15" cellspacing="0" style="width: 100%; border-collapse: collapse;">
-                    <tr>
-                        <td style="background-color: #fffbf0;">
-                            <strong>Carlos Mendoza:</strong>
-                            <p>"SoundWave cambió la forma en que contrato músicos para mis eventos. ¡Excelente plataforma!"</p>
-                            <p>⭐⭐⭐⭐⭐</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="background-color: #f0f9ff;">
-                            <strong>María García:</strong>
-                            <p>"Encontré a la banda perfecta para mi matrimonio. Fueron increíbles y todos lo disfrutaron."</p>
-                            <p>⭐⭐⭐⭐⭐</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="background-color: #f5fff5;">
-                            <strong>Juan Rodriguez:</strong>
-                            <p>"Como músico, SoundWave me ha permitido expandir mi negocio y conectar con más clientes."</p>
-                            <p>⭐⭐⭐⭐⭐</p>
-                        </td>
-                    </tr>
-                </table>
-            </section>
+        <section id="testimonios">
+            <h2>Testimonios</h2>
+            <article>
+                <p>SoundWave cambió la forma en que contrato músicos para mis eventos.</p>
+                <p>- Carlos Mendoza</p>
+            </article>
+            <article>
+                <p>Encontré a la banda perfecta para mi matrimonio.</p>
+                <p>- María García</p>
+            </article>
+            <article>
+                <p>Como músico, SoundWave me ha permitido expandir mi negocio.</p>
+                <p>- Juan Rodriguez</p>
+            </article>
+        </section>
 
-            <!-- SECCIÓN 3: Contacto -->
-            <section id="contacto" style="padding: 30px;">
-                <h2 style="color: #667eea;">📧 Contacto</h2>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name">
                 
-                <form style="display: flex; flex-direction: column; gap: 15px;">
-                    <div>
-                        <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Nombre Completo:</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" style="width: 100%; padding: 10px; border: 1px solid #ccc; font-size: 14px;">
-                    </div>
-                    
-                    <div>
-                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" style="width: 100%; padding: 10px; border: 1px solid #ccc; font-size: 14px;">
-                    </div>
-                    
-                    <div>
-                        <label for="subject" style="display: block; margin-bottom: 5px; font-weight: bold;">Asunto:</label>
-                        <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" style="width: 100%; padding: 10px; border: 1px solid #ccc; font-size: 14px;">
-                    </div>
-                    
-                    <div>
-                        <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">Mensaje:</label>
-                        <textarea id="message" name="message" placeholder="Tu mensaje aquí..." rows="5" style="width: 100%; padding: 10px; border: 1px solid #ccc; font-size: 14px; font-family: Arial;"></textarea>
-                    </div>
-                    
-                    <button type="submit" style="padding: 12px; background-color: #667eea; color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer;">Enviar Mensaje</button>
-                </form>
-            </section>
-        </main>
-
-        <!-- ASIDE - Barra Lateral -->
-        <aside style="flex: 1;">
-            
-            <!-- ASIDE 1: Registro -->
-            <section id="registro" style="background-color: #f0f0ff; padding: 25px; margin-bottom: 20px; border: 2px solid #667eea;">
-                <h3 style="color: #667eea; margin-top: 0;">🌟 Regístrate Ahora</h3>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
                 
-                <form style="display: flex; flex-direction: column; gap: 12px;">
-                    <input type="text" placeholder="Nombre completo" style="padding: 10px; border: 1px solid #ccc; font-size: 14px;">
-                    <input type="email" placeholder="Email" style="padding: 10px; border: 1px solid #ccc; font-size: 14px;">
-                    <input type="password" placeholder="Contraseña" style="padding: 10px; border: 1px solid #ccc; font-size: 14px;">
-                    <input type="tel" placeholder="Teléfono" style="padding: 10px; border: 1px solid #ccc; font-size: 14px;">
-                    <button type="submit" style="padding: 12px; background-color: #ff6b6b; color: white; border: none; font-weight: bold; cursor: pointer; font-size: 14px;">Crear Cuenta</button>
-                </form>
-                <p style="font-size: 12px; text-align: center; margin-top: 10px;">Ya tienes cuenta? <a href="#" style="color: #667eea; text-decoration: none;">Inicia sesión</a></p>
-            </section>
-
-            <!-- ASIDE 2: Estadísticas -->
-            <section style="background-color: #fffbf0; padding: 25px; margin-bottom: 20px; border: 2px solid #ff9800;">
-                <h3 style="color: #ff9800; margin-top: 0;">📊 Nuestras Cifras</h3>
+                <label for="subject">Asunto:</label>
+                <input type="text" id="subject" name="subject">
                 
-                <table cellpadding="10" cellspacing="0" style="width: 100%;">
-                    <tr>
-                        <td style="text-align: center; background-color: #fff5e6; padding: 15px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #667eea;">500+</div>
-                            <div style="font-size: 12px;">Bandas Activas</div>
-                        </td>
-                        <td style="text-align: center; background-color: #fff5e6; padding: 15px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #667eea;">10K+</div>
-                            <div style="font-size: 12px;">Usuarios</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; background-color: #fffbf0; padding: 15px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #667eea;">2K+</div>
-                            <div style="font-size: 12px;">Eventos</div>
-                        </td>
-                        <td style="text-align: center; background-color: #fffbf0; padding: 15px;">
-                            <div style="font-size: 24px; font-weight: bold; color: #667eea;">4.9★</div>
-                            <div style="font-size: 12px;">Calificación</div>
-                        </td>
-                    </tr>
-                </table>
-            </section>
-
-            <!-- ASIDE 3: Bandas Destacadas -->
-            <section style="background-color: #f5fff5; padding: 25px; border: 2px solid #4caf50;">
-                <h3 style="color: #4caf50; margin-top: 0;">🎼 Bandas Destacadas</h3>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message"></textarea>
                 
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="padding: 10px; background-color: #e8f5e9; margin-bottom: 8px; border-left: 4px solid #4caf50;">
-                        <strong>Los Maestros del Ritmo</strong>
-                        <br><small>Reggaeton • 4.8★</small>
-                    </li>
-                    <li style="padding: 10px; background-color: #e8f5e9; margin-bottom: 8px; border-left: 4px solid #4caf50;">
-                        <strong>Electric Harmony</strong>
-                        <br><small>Rock • 4.9★</small>
-                    </li>
-                    <li style="padding: 10px; background-color: #e8f5e9; margin-bottom: 8px; border-left: 4px solid #4caf50;">
-                        <strong>Tropical Vibes</strong>
-                        <br><small>Salsa • 4.7★</small>
-                    </li>
-                    <li style="padding: 10px; background-color: #e8f5e9; border-left: 4px solid #4caf50;">
-                        <strong>Jazz Boulevard</strong>
-                        <br><small>Jazz • 4.8★</small>
-                    </li>
-                </ul>
-            </section>
-        </aside>
-    </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer style="background-color: #1a1f3a; color: white; text-align: center; padding: 30px; margin-top: 40px;">
-        <p style="margin: 10px 0;">&copy; 2026 SoundWave - Agencia de Grupos de Música. Todos los derechos reservados.</p>
-        <p style="margin: 10px 0;">Conectando artistas y audiencias en todo el mundo 🌍</p>
+    <aside>
+        <section id="registro">
+            <h3>Registrarse</h3>
+            <form>
+                <label for="reg_name">Nombre:</label>
+                <input type="text" id="reg_name" name="reg_name">
+                
+                <label for="reg_email">Email:</label>
+                <input type="email" id="reg_email" name="reg_email">
+                
+                <label for="reg_password">Contraseña:</label>
+                <input type="password" id="reg_password" name="reg_password">
+                
+                <label for="reg_phone">Teléfono:</label>
+                <input type="tel" id="reg_phone" name="reg_phone">
+                
+                <button type="submit">Crear Cuenta</button>
+            </form>
+        </section>
+
+        <section>
+            <h3>Estadísticas</h3>
+            <p>Bandas Activas: 500+</p>
+            <p>Usuarios: 10K+</p>
+            <p>Eventos: 2K+</p>
+            <p>Calificación: 4.9/5</p>
+        </section>
+
+        <section>
+            <h3>Bandas Destacadas</h3>
+            <ul>
+                <li>Los Maestros del Ritmo - Reggaeton</li>
+                <li>Electric Harmony - Rock</li>
+                <li>Tropical Vibes - Salsa</li>
+                <li>Jazz Boulevard - Jazz</li>
+            </ul>
+        </section>
+    </aside>
+
+    <footer>
+        <p>2026 SoundWave - Agencia de Grupos de Música</p>
+        <p>Conectando artistas y audiencias en todo el mundo</p>
     </footer>
 
 </body>
