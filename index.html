@@ -3,113 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundWave - Agencia de Grupos de Música</title>
+    <title>SoundStart - Plataforma de Música para Artistas</title>
 </head>
 <body>
     <header>
-        <h1>SoundWave</h1>
-        <p>Agencia de Grupos de Música</p>
+        <h1>SoundStart</h1>
+        <p>Tu camino hacia el éxito musical - Forma tu grupo y debuta profesionalmente</p>
     </header>
 
     <nav>
-        <a href="#servicios">Servicios</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#registro">Registrarse</a>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
     </nav>
 
     <main>
+        <!-- Sección 1: Introducción -->
+        <section id="inicio">
+            <h2>Bienvenido a SoundStart</h2>
+            <p>SoundStart es una plataforma innovadora que conecta a músicos talentosos de toda la región. Aquí puedes registrarte, conocer otros artistas y formar los grupos musicales del futuro.</p>
+            <p>Nuestro objetivo es dar la oportunidad a todos los músicos apasionados de debutar profesionalmente en un ambiente colaborativo y seguro.</p>
+        </section>
+
+        <!-- Sección 2: Sobre la Empresa -->
+        <section id="sobre-nosotros">
+            <h2>¿Quiénes Somos?</h2>
+            <p>Fundada en 2020, SoundStart nació de la visión de democratizar el acceso a oportunidades musicales. Contamos con más de 5,000 artistas registrados en nuestra comunidad.</p>
+            <p>Nuestro equipo está compuesto por productores musicales, ingenieros de sonido y empresarios de la industria musical con más de 50 años de experiencia combinada.</p>
+            <p><strong>Misión:</strong> Conectar talento musical con oportunidades de crecimiento profesional.</p>
+        </section>
+
+        <!-- Sección 3: Servicios -->
         <section id="servicios">
             <h2>Nuestros Servicios</h2>
-            <h3>Descubrimiento</h3>
-            <p>Explora cientos de bandas y artistas talentosos</p>
-            <h3>Reservas</h3>
-            <p>Contrata tus bandas favoritas de forma rápida y segura</p>
-            <h3>Eventos</h3>
-            <p>Organiza eventos inolvidables con artistas profesionales</p>
-            <h3>Recomendaciones</h3>
-            <p>Obtén sugerencias personalizadas según tus gustos musicales</p>
-        </section>
-
-        <section id="testimonios">
-            <h2>Testimonios</h2>
             <article>
-                <p>SoundWave cambió la forma en que contrato músicos para mis eventos.</p>
-                <p>- Carlos Mendoza</p>
+                <h3>Registro de Artistas</h3>
+                <p>Crea tu perfil profesional y accede a una comunidad global de músicos. Comparte tu música, muestra tu talento y conecta con otros artistas.</p>
             </article>
             <article>
-                <p>Encontré a la banda perfecta para mi matrimonio.</p>
-                <p>- María García</p>
+                <h3>Formación de Grupos</h3>
+                <p>Encuentra músicos compatibles con tu estilo musical. Nuestro sistema de matching te ayuda a encontrar el grupo perfecto para debutar.</p>
             </article>
             <article>
-                <p>Como músico, SoundWave me ha permitido expandir mi negocio.</p>
-                <p>- Juan Rodriguez</p>
+                <h3>Producción y Grabación</h3>
+                <p>Accede a nuestros estudios de grabación asociados con tarifas especiales para miembros. Produce tu primer EP o álbum con calidad profesional.</p>
             </article>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form>
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name">
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                
-                <label for="subject">Asunto:</label>
-                <input type="text" id="subject" name="subject">
-                
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message"></textarea>
-                
-                <button type="submit">Enviar</button>
-            </form>
+            <article>
+                <h3>Giras y Presentaciones</h3>
+                <p>Participa en conciertos, festivales y eventos organizados por SoundStart. Crece tu audiencia y gana experiencia en vivo.</p>
+            </article>
         </section>
     </main>
 
     <aside>
-        <section id="registro">
-            <h3>Registrarse</h3>
-            <form>
-                <label for="reg_name">Nombre:</label>
-                <input type="text" id="reg_name" name="reg_name">
+        <h2>Registro Rápido</h2>
+        <p>¿Listo para comenzar tu carrera musical?</p>
+        <form id="registro">
+            <fieldset>
+                <legend>Formulario de Registro</legend>
                 
-                <label for="reg_email">Email:</label>
-                <input type="email" id="reg_email" name="reg_email">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
                 
-                <label for="reg_password">Contraseña:</label>
-                <input type="password" id="reg_password" name="reg_password">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
                 
-                <label for="reg_phone">Teléfono:</label>
-                <input type="tel" id="reg_phone" name="reg_phone">
+                <label for="instrumento">Instrumento Principal:</label>
+                <select id="instrumento" name="instrumento" required>
+                    <option value="">Selecciona un instrumento</option>
+                    <option value="guitarra">Guitarra</option>
+                    <option value="bajo">Bajo</option>
+                    <option value="bateria">Batería</option>
+                    <option value="teclados">Teclados</option>
+                    <option value="voz">Voz</option>
+                    <option value="violin">Violín</option>
+                    <option value="otro">Otro</option>
+                </select>
                 
-                <button type="submit">Crear Cuenta</button>
-            </form>
-        </section>
-
-        <section>
-            <h3>Estadísticas</h3>
-            <p>Bandas Activas: 500+</p>
-            <p>Usuarios: 10K+</p>
-            <p>Eventos: 2K+</p>
-            <p>Calificación: 4.9/5</p>
-        </section>
-
-        <section>
-            <h3>Bandas Destacadas</h3>
-            <ul>
-                <li>Los Maestros del Ritmo - Reggaeton</li>
-                <li>Electric Harmony - Rock</li>
-                <li>Tropical Vibes - Salsa</li>
-                <li>Jazz Boulevard - Jazz</li>
-            </ul>
-        </section>
+                <label for="genero">Género Musical Preferido:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Selecciona un género</option>
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="blues">Blues</option>
+                    <option value="electronica">Electrónica</option>
+                    <option value="folk">Folk</option>
+                    <option value="clasica">Clásica</option>
+                </select>
+                
+                <label for="experiencia">Años de Experiencia:</label>
+                <input type="number" id="experiencia" name="experiencia" min="0" max="70" required>
+                
+                <label for="biografia">Cuéntanos sobre ti:</label>
+                <textarea id="biografia" name="biografia" rows="4" placeholder="Comparte tu historia musical..."></textarea>
+                
+                <button type="submit">Registrarme Ahora</button>
+            </fieldset>
+        </form>
     </aside>
 
     <footer>
-        <p>2026 SoundWave - Agencia de Grupos de Música</p>
-        <p>Conectando artistas y audiencias en todo el mundo</p>
+        <section id="contacto">
+            <h3>Contacto</h3>
+            <p><strong>Email:</strong> info@soundstart.com</p>
+            <p><strong>Teléfono:</strong> +34 912 345 678</p>
+            <p><strong>Dirección:</strong> Calle Melodía 42, Madrid, España</p>
+        </section>
+        
+        <section>
+            <h3>Síguenos</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">TikTok</a></li>
+            </ul>
+        </section>
+        
+        <section>
+            <h3>Enlaces Legales</h3>
+            <ul>
+                <li><a href="#">Términos de Servicio</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+            </ul>
+        </section>
+        
+        <p>&copy; 2026 SoundStart. Todos los derechos reservados. Plataforma oficial de música y formación de grupos.</p>
     </footer>
-
 </body>
 </html>
